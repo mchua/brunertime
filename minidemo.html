@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization',
+       'version':'1','packages':['timeline']}]}"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript">
+
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+	  var container = document.getElementById('mark-timeline');
+	  var chart = new google.visualization.Timeline(container);
+	  var dataTable = new google.visualization.DataTable();
+
+	  dataTable.addColumn({ type: 'string', id: 'Row' });
+	  dataTable.addColumn({ type: 'string', id: 'Headline' });
+	  dataTable.addColumn({ type: 'date', id: 'Start' });
+	  dataTable.addColumn({ type: 'date', id: 'End' });
+	  dataTable.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
+	  // Tooltip workaround from http://jsfiddle.net/MooseEagleShark/muz3t9qx/
+
+	  dataTable.addRows([
+[ '2 Mark', 'Lost a faculty member over the summer', new Date(2014,5,1), new Date(2014,8,1), 'During the summer, we lost a faculty member. We had one that left. So to correct that, we decided to use the opportunity to really get past the whole classroom barrier issue. So there was a course that was available, that had to be covered. It’s a foundational course. And it met basically four days a week. Monday, Wednesday, for one section, and Tuesday, Thursday, for the other. So four of us decided to teach it.' ],
+[ '2 Mark', 'Currently team-teaching a course', new Date(2014,8,1), new Date(2014,12,1), 'So two of us are team teaching the Monday-Wednesday, and two were team teaching the Tuesday-Thursday. And all four of us meet every Friday to discuss the course and how it’s progressing. So for the first time since I’ve been here, at least, we are forcing ourselves in a positive way to work together, come to a consistent language, you know, if there is any confusion, we work through the confusion, through communication. You know, basically using this course, this foundational course, as a way to really address, hopefully, other concerns, and even lack of trust within the program. And start to build on it.' ],
+[ '2 Mark', 'Deciding to team-teach the course', new Date(2014,5,1), new Date(2014,8,1), 'It came from the discussion -- it’s like we were free, we looked at our schedules, and two of us -- we all had free times. And trying to figure out who would teach it. Here’s an opportunity that we can really work together. Let’s do it. And there’s no point leaving anyone out of it. Especially since we have the time, and it’s not about -- you two team teach, and I’ll teach the other one. No. Let’s all invest in this. This is something that we’ve said is foundational. We should all be involved in it.' ],
+[ '3 Mark', 'Mark brings up pedagogy in a meeting', new Date(2014,7,1), new Date(2014,7,1), 'I brought this up in a meeting not too long ago, "We may disagree on philosophy, we may disagree in even pedagogy, when it comes down to the outcomes, I think we all align on the outcomes the goal and the objectives." And when it comes down to it, it\'s not about will I get what you have or who teaches the better lesson or your PowerPoint versus mine. it\'s about getting the students aligned and are they prepared? Do we have evidence of such? you\'re moving on. So it was a roundabout answer for that.' ],
+[ '3 Mark', 'Mark meets with a student', new Date(2014,8,1), new Date(2014,8,1), 'I had a student come in today who was having issues with the group. And he said, "they\'re not doing their work, so I\'m just gonna call the teacher and tell him that it\'s not my fault, that it\'s their fault." And I\'m like, "No", and I told him point blank, "No, it\'s your fault." And he said, "How could it be my fault? They didn\'t do the work." I\'m like, "Did you call \'em? Did you communicate to them? Did you put pressure on them?" Did you say, "We gotta get this done? Did you do anything? Did you do your work?" And he said, "Oh no, I was waiting for them." And I was very blunt with him. I said, "So you\'re equally to blame. Until you see that, you\'ll never fully understand how a team works." I said, "It takes equal responsibility. it\'s not about having one leader. it\'s about everyone taking a leadership position and shifting, depending on what is needed."' ],
+[ '3 Mark', 'Discussions on changing the course over the summer', new Date(2014,5,1), new Date(2014,8,1), 'Now that he left, and we were in the situation, it\'s like, "Alright, now we have the time to really do the course the way that all of us"... We may not agree on it. we\'re gonna to change it. we\'re gonna finagle it. we\'re gonna adjust it just so, and it\'s not gonna be set in stone.' ],
+[ '3 Mark', 'Mark proposes changing the course to a materials class', new Date(2014,5,1), new Date(2014,8,1), 'So we talked about all the courses. We talked about what would be. That\'s when I proposed changing it to a materials class. And so, yeah. This is all part of the process, at least from my point of view.' ],
+[ '3 Mark', 'Student feedback on the revised class', new Date(2014,12,1), new Date(2014,12,15), 'Now, of course, the true test of it all, will be when IATs come out and they tell us what a horrible job we all did. But you know what, they can\'t fault us for trying. And at least from the measures we\'ve been given so far, the students are learning.' ],
+[ '3 Mark', 'Losing a faculty member', new Date(2014,7,11), new Date(2014,7,11), 'Well, it would be a very short book, because we did not lose a faculty member until July 11th. That\'s when it hit. So I guess the first chapter would be, "Oh shit."' ],
+[ '3 Mark', 'Trying to figure out what to do with the course', new Date(2014,7,11), new Date(2014,8,11), 'And then it would probably follow and it\'s like, "Now What?" [chuckle]' ],
+[ '3 Mark', 'Everyone goes on vacation', new Date(2014,7,11), new Date(2014,8,11), 'Now, of course, the reality is when that happened he left, all of us were going away. So none of us had any time to work on the course.' ],
+[ '3 Mark', 'Starting to work on the course', new Date(2014,8,11), new Date(2014,8,20), 'So, we did not actually start working on the course until the second week of August. And we started the course, I think it was the 20th. Yeah. So, we did not start the course until probably a week before the course began.' ],
+[ '3 Mark', 'Waiting for everyone to get back', new Date(2014,7,11), new Date(2014,8,11), 'And that\'s... I think we decided, all four of us, were gonna teach it back in July, but then realized there\'s nothing we can do since we\'re all leaving and no one\'s gonna be back in town. I think everyone got back in town on the 6th or 7th.' ],
+[ '3 Mark', 'Starting to work on the course', new Date(2014,8,11), new Date(2014,8,20), 'I think we met for the first time, about the course, on the 10th or 11th. No, I\'m sorry, let me correct that. No, I think we met for the first time on the... Yeah, actually, maybe on the 11th.' ],
+[ '3 Mark', 'The class starts', new Date(2014,8,20), new Date(2014,8,20), 'And then, first day of class was the 20th. So... we didn\'t have a lot of time to plan for this.' ],
+[ '3 Mark', 'Waiting for everyone to get back', new Date(2014,7,11), new Date(2014,8,11), 'And then the "Now What?" immediately followed, and... "Now What? But we\'re Leaving." Basically, "Now What? Goodbye." [chuckle]' ]
+
+
+		]);
+
+	  chart.draw(dataTable);
+	  function myHandler(e){
+        if(e.row != null){
+            $(".google-visualization-tooltip").html(dataTable.getValue(e.row,4)).css({width:"auto",height:"auto"});
+        }        
+    }
+    
+google.visualization.events.addListener(chart, 'onmouseover', myHandler);
+	}
+	</script>
+
+	<div id="mark-timeline" style="width: 900px; height: 8000px;"></div>
+  </body>
+</html>
